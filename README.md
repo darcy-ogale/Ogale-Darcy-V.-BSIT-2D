@@ -6,7 +6,6 @@ Project Title: Cyber Serpent
 
 The Cyber Serpent game includes a leaderboard feature built in PHP using an Object-Oriented Programming (OOP) structure. The code uses the four OOP pillars—encapsulation, abstraction, inheritance, and polymorphism—to keep the leaderboard organized and well-structured.
 
-
 ---
 
 2. Technology Stack
@@ -23,19 +22,23 @@ JavaScript
 
 XAMPP (Apache server)
 
-
-
 ---
 
 3. Team Members and Contributions
 
 Team Member	Contribution
 
-(Your Name)	Created Cyber Serpent game, leaderboard system, and technical documentation
+Leader: Ogale, Darcy [Lead Developer]
 
+Members:
 
-(Your file only contains one author: Denise Lou B. Punzalan. Add others ONLY if needed.)
+• Famanila, Jerry Andrew [Game Designer]
 
+• Magos, Mark john [Game Deisnger]
+
+• Martin, John Erick [Game Logic]
+
+• Milanio Harrison [Technical Doc Writer]
 
 ---
 
@@ -91,8 +94,6 @@ Final score is displayed
 Score is saved to leaderboard
 
 Leaderboard updates automatically
-
-
 
 ---
 
