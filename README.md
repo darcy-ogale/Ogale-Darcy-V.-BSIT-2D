@@ -38,7 +38,7 @@ Members:
 
 • Martin, John Erick [Game Logic]
 
-• Milanio Harrison [Technical Doc Writer]
+• Milanio, Harrison [Tech Doc Writer]
 
 ---
 
