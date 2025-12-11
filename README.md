@@ -165,9 +165,140 @@ Use arrow keys to control the snake
 Score is saved when the game ends
 
 ---
+I. Encapsulation
+
+Encapsulation protects data by preventing direct access and allowing controlled interaction only through defined methods.
+
+How It Is Implemented
+
+Private Property (Data Hiding)
+
+The $file property inside the Storage class is declared as
+private string $file;
+
+Purpose: Prevents external code from directly modifying the path of the scores.json file, ensuring data safety and controlled access.
+
+
+Controlled Internal Access (Read/Write)
+
+File operations (reading and writing JSON data) are handled by the protected methods read() and write().
+
+Purpose: Only the Storage class and its child classes (such as Leaderboard) can access these sensitive operations, maintaining data integrity.
+
+
+Public Interface (Score Management)
+
+External interaction happens through the public methods:
+
+getTopScores()
+
+addScore()
+
+resetScores()
+
+
+Purpose: These methods enforce proper rules, such as:
+
+Sanitizing player names with htmlspecialchars()
+
+Sorting the list of scores
+
+Limiting the leaderboard to the top 10 entries using array_slice()
+
+---
+
+II. Abstraction
+
+Abstraction simplifies usage by hiding complex internal logic and exposing only essential methods.
+
+How It Is Implemented
+
+Simple Public Methods
+Users interact with the leaderboard using straightforward commands:
+
+$leaderboard->addScore($name, $score)
+
+$leaderboard->getTopScores()
+
+$leaderboard->resetScores()
+
+
+Hidden Internal Logic
+Inside the class, the system handles all complex tasks automatically:
+
+Reading the scores.json file
+
+JSON decoding with fallbacks
+
+Sorting scores using usort()
+
+Limiting results to 10 using array_slice()
+
+Writing the updated list back to the file
+
+---
+
+III. Inheritance
+
+Inheritance allows one class to reuse and extend another class’s functionality.
+
+How It Is Implemented
+
+Storage (Base Class)
+Contains shared file-handling functionality:
+
+__construct()
+
+read()
+
+write()
+
+getTopScores()
+
+
+Leaderboard (Child Class)
+
+Defined as class Leaderboard extends Storage
+
+Inherits all base file-management features
+
+Adds its own logic in addScore() for:
+
+Sanitizing
+
+Sorting
+
+Ranking
+
+Capping to top 10
+
+---
+
+IV. Polymorphism
+
+Polymorphism allows a method to behave differently depending on which class implements it.
+
+How It Is Implemented
+
+Overridden addScore() Method
+
+The Storage class contains a basic (empty) implementation of addScore().
+
+The Leaderboard class overrides this method with its own complete scoring logic.
+
+Purpose:
+Even though both classes have an addScore() method, the version that runs depends on the object type.
+When using:
+
+$leaderboard = new Leaderboard(...);
+
+The customized addScore() from Leaderboard is executed.
+
+---
 
 Video Demonstration Links
 
-https://drive.google.com/drive/folders/1lkLrMYx3uZ5zF22yXUqa5Al68atz_6kW?usp=drive_link
+Ogale,Darcy https://drive.google.com/drive/folders/1lkLrMYx3uZ5zF22yXUqa5Al68atz_6kW?usp=drive_link
 
+Magos, Markjohn
 https://drive.google.com/drive/folders/1C2yTWcHy8gaQbFBLGlwGCernLCQc-0ke?usp=drive_link
